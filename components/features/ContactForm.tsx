@@ -123,7 +123,7 @@ export function ContactForm() {
                 type="text"
                 required
                 className={cn(
-                  "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg",
+                  "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg text-black dark:text-white",
                   errors.name 
                     ? "border-red-500/50 focus:border-red-500" 
                     : "border-black/10 dark:border-white/10 focus:border-black dark:focus:border-white"
@@ -165,7 +165,7 @@ export function ContactForm() {
                 type="email"
                 required
                 className={cn(
-                  "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg",
+                  "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg text-black dark:text-white",
                   errors.email 
                     ? "border-red-500/50 focus:border-red-500" 
                     : "border-black/10 dark:border-white/10 focus:border-black dark:focus:border-white"
@@ -206,7 +206,7 @@ export function ContactForm() {
               required
               value={formData.projectType}
               className={cn(
-                "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg appearance-none cursor-pointer",
+                "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg text-black dark:text-white appearance-none cursor-pointer",
                 errors.projectType 
                   ? "border-red-500/50 focus:border-red-500" 
                   : "border-black/10 dark:border-white/10 focus:border-black dark:focus:border-white"
@@ -218,10 +218,10 @@ export function ContactForm() {
                 if (errors.projectType) setErrors({ ...errors, projectType: "" });
               }}
             >
-              <option value="" disabled className="dark:bg-zinc-900">Select an option</option>
-              <option value="residential" className="dark:bg-zinc-900">Residential Interior</option>
-              <option value="commercial" className="dark:bg-zinc-900">Commercial Architectural</option>
-              <option value="consultation" className="dark:bg-zinc-900">Strategic Consultation</option>
+              <option value="" disabled className="bg-white text-black dark:bg-zinc-900 dark:text-white"></option>
+              <option value="residential" className="bg-white text-black dark:bg-zinc-900 dark:text-white">Residential Interior</option>
+              <option value="commercial" className="bg-white text-black dark:bg-zinc-900 dark:text-white">Commercial Architectural</option>
+              <option value="consultation" className="bg-white text-black dark:bg-zinc-900 dark:text-white">Strategic Consultation</option>
             </select>
             <AnimatePresence>
               {errors.projectType && (
@@ -251,7 +251,7 @@ export function ContactForm() {
               required
               rows={4}
               className={cn(
-                "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg resize-none",
+                "w-full bg-transparent border-b py-4 focus:outline-none transition-colors font-display text-lg text-black dark:text-white resize-none",
                 errors.message 
                   ? "border-red-500/50 focus:border-red-500" 
                   : "border-black/10 dark:border-white/10 focus:border-black dark:focus:border-white"

@@ -37,7 +37,7 @@ export function FluidNavbar() {
           <div className="flex flex-col w-full">
             <div className="flex items-center justify-between gap-8">
               {/* Logo */}
-              <Link href="/" className="font-display font-bold text-lg tracking-tighter shrink-0" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="font-display font-bold text-lg tracking-tighter shrink-0 text-black dark:text-white" onClick={() => setIsOpen(false)}>
                 STUDIO STRUCTURAL
               </Link>
 
@@ -48,7 +48,7 @@ export function FluidNavbar() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="text-xs uppercase tracking-widest font-medium opacity-60 hover:opacity-100 transition-opacity"
+                      className="text-xs uppercase tracking-widest font-medium text-black dark:text-white opacity-60 hover:opacity-100 transition-opacity"
                     >
                       {link.name}
                     </Link>
@@ -71,7 +71,7 @@ export function FluidNavbar() {
                 
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors cursor-pointer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors cursor-pointer text-black dark:text-white"
                 >
                   {isOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
@@ -98,7 +98,7 @@ export function FluidNavbar() {
                       <Link
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="text-3xl font-display font-bold hover:italic transition-all"
+                        className="text-3xl font-display font-bold text-black dark:text-white hover:italic transition-all"
                       >
                         {link.name}
                       </Link>
