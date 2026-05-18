@@ -6,7 +6,7 @@
 - **Interactivity:**
   - **WebGL Hero:** Abstract 3D slabs using React Three Fiber.
   - **Before/After Slider:** Draggable clip-path comparison for architectural transformations.
-  - **Fluid Navigation:** Morphing glass pill navbar with staggered menu reveals.
+  - **Fluid Navigation:** Morphing glass pill navbar with staggered menu reveals. (Fixed light/dark theme visibility & contrast issues)
   - **Haptic UI:** Double-bezel cards and magnetic pull buttons for tactile engagement.
   - **Motion:** Performance-optimized Framer Motion transitions (GPU-safe).
 
@@ -31,7 +31,7 @@
 - `/portfolio/[slug]`: Detailed case studies with Before/After interactions.
 - `/services`: Architectural service tiers.
 - `/about`: Methodology and vision.
-- `/contact`: High-conversion inquiry form with floating labels. (Fixed select element console error)
+- `/contact`: High-conversion inquiry form with floating labels. (Fixed select element console error & light/dark theme field/dropdown visibility)
 
 ---
 
