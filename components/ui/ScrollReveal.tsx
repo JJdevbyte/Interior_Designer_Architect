@@ -14,10 +14,10 @@ export function ScrollReveal({
   children,
   delay = 0,
   direction = "up",
-  distance = 50,
+  distance = 30, // Reduced from 50 for smoother, tighter reveals
 }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const directionOffset = {
     up: { y: distance },
@@ -32,18 +32,18 @@ export function ScrollReveal({
       initial={{
         opacity: 0,
         ...directionOffset[direction],
-        filter: "blur(10px)",
       }}
       animate={
         isInView
-          ? { opacity: 1, x: 0, y: 0, filter: "blur(0px)" }
-          : { opacity: 0, ...directionOffset[direction], filter: "blur(10px)" }
+          ? { opacity: 1, x: 0, y: 0 }
+          : { opacity: 0, ...directionOffset[direction] }
       }
       transition={{
-        duration: 1.2,
+        duration: 0.8, // Snappier and matches high refresh rate monitors better
         delay,
-        ease: [0.32, 0.72, 0, 1],
+        ease: [0.25, 1, 0.5, 1], // Performant custom ease curve
       }}
+      className="will-change-[transform,opacity]"
     >
       {children}
     </motion.div>

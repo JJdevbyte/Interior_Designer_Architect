@@ -22,8 +22,14 @@ export function FluidNavbar() {
         {/* Main Pill */}
         <motion.div
           layout
+          transition={{
+            type: "spring",
+            stiffness: 150,
+            damping: 25,
+            mass: 0.8
+          }}
           className={cn(
-            "bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-full shadow-soft flex items-center transition-fluid",
+            "bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-full shadow-soft flex items-center",
             isOpen ? "px-8 py-12 w-full max-w-lg rounded-[2.5rem]" : "px-4 py-2 w-max"
           )}
         >
