@@ -1,4 +1,3 @@
-"use client";
 
 import { WebGLHero } from "@/components/features/WebGLHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";

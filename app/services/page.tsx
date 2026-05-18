@@ -1,7 +1,6 @@
-"use client";
-
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import Link from "next/link";
 
 export default function ServicesPage() {
   return (
@@ -47,9 +46,11 @@ export default function ServicesPage() {
                   ))}
                 </div>
                 <div className="lg:col-span-3 flex justify-end items-start">
-                  <MagneticButton strength={20} className="px-6 py-3 text-[8px]">
-                    Learn More
-                  </MagneticButton>
+                  <Link href="/contact">
+                    <MagneticButton strength={20} className="px-6 py-3 text-[8px]">
+                      Learn More
+                    </MagneticButton>
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -60,9 +61,11 @@ export default function ServicesPage() {
         <ScrollReveal>
           <div className="mt-40 text-center">
             <h2 className="text-3xl font-display font-bold mb-8">Ready to define your space?</h2>
-            <MagneticButton onClick={() => window.location.href = '/contact'}>
-              Request a Quote
-            </MagneticButton>
+            <Link href="/contact">
+              <MagneticButton>
+                Request a Quote
+              </MagneticButton>
+            </Link>
           </div>
         </ScrollReveal>
       </div>

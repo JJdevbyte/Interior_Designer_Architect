@@ -1,16 +1,25 @@
-"use client";
-
 import { projects } from "@/lib/data";
 import { BeforeAfterSlider } from "@/components/features/BeforeAfterSlider";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { useParams, notFound } from "next/navigation";
+import { MaterialBoard } from "@/components/features/MaterialBoard";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, Calendar } from "lucide-react";
 
-export default function ProjectPage() {
-  const params = useParams();
-  const project = projects.find((p) => p.slug === params.slug);
+interface ProjectPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({
+    slug: p.slug,
+  }));
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
@@ -114,6 +123,11 @@ export default function ProjectPage() {
           ))}
         </div>
 
+        {/* Tactile Material Swatches */}
+        <ScrollReveal>
+          <MaterialBoard slug={resolvedParams.slug} />
+        </ScrollReveal>
+
         {/* CTA Footer */}
         <ScrollReveal>
           <div className="bezel-outer p-12 md:p-24 text-center">
@@ -124,9 +138,11 @@ export default function ProjectPage() {
               <p className="max-w-md opacity-60 mb-4">
                 Whether it's a structural deconstruction or a curated interior narrative, we are ready to guide your project.
               </p>
-              <MagneticButton onClick={() => window.location.href = '/contact'}>
-                Book a Consultation
-              </MagneticButton>
+              <Link href="/contact">
+                <MagneticButton>
+                  Book a Consultation
+                </MagneticButton>
+              </Link>
             </div>
           </div>
         </ScrollReveal>

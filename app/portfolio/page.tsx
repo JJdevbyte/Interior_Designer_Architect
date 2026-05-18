@@ -1,4 +1,3 @@
-"use client";
 
 import { projects } from "@/lib/data";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";

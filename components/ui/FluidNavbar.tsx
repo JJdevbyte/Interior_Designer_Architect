@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const navLinks = [
   { name: "Portfolio", href: "/portfolio" },
@@ -66,9 +67,11 @@ export function FluidNavbar() {
                   </Link>
                 )}
                 
+                <ThemeToggle />
+                
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors cursor-pointer"
                 >
                   {isOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>

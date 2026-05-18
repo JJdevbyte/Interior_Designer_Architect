@@ -1,4 +1,3 @@
-"use client";
 
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { DoubleBezelCard } from "@/components/ui/DoubleBezelCard";
