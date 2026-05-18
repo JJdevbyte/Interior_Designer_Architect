@@ -27,7 +27,7 @@
 - `/portfolio/[slug]`: Detailed case studies with Before/After interactions.
 - `/services`: Architectural service tiers.
 - `/about`: Methodology and vision.
-- `/contact`: High-conversion inquiry form with floating labels.
+- `/contact`: High-conversion inquiry form with floating labels. (Fixed select element console error)
 
 ---
 *Status: Project Fully Implemented. Ready for deployment.*

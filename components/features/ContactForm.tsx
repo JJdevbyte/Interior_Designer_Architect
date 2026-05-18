@@ -75,12 +75,13 @@ export function ContactForm() {
         </label>
         <select
           required
+          value={formData.projectType}
           className="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-4 focus:outline-none focus:border-black dark:focus:border-white transition-colors font-display text-lg appearance-none cursor-pointer"
           onFocus={() => setActiveField("type")}
           onBlur={() => setActiveField(null)}
           onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
         >
-          <option value="" disabled selected className="dark:bg-zinc-900">Select an option</option>
+          <option value="" disabled className="dark:bg-zinc-900">Select an option</option>
           <option value="residential" className="dark:bg-zinc-900">Residential Interior</option>
           <option value="commercial" className="dark:bg-zinc-900">Commercial Architectural</option>
           <option value="consultation" className="dark:bg-zinc-900">Strategic Consultation</option>
